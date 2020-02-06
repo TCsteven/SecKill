@@ -1,6 +1,7 @@
 package com.ygc.miaosha.controller;
 
 import com.ygc.miaosha.domain.User;
+import com.ygc.miaosha.redis.UserKey;
 import com.ygc.miaosha.result.Result;
 import com.ygc.miaosha.serivce.RedisService;
 import com.ygc.miaosha.serivce.UserService;
@@ -38,7 +39,14 @@ public class SampleController {
     @RequestMapping("/redis/get")
     @ResponseBody
     public Result<String> rdGet(){
-        String value = redisService.get("key1", String.class);
+        String value = redisService.get(UserKey.getById,"key2", String.class);
         return Result.success(value);
+    }
+
+    @RequestMapping("/redis/set")
+    @ResponseBody
+    public Result<Boolean> rdSet(){
+        boolean res = redisService.set(UserKey.getById, "key2", "sdad");
+        return Result.success(res);
     }
 }
