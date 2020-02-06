@@ -52,6 +52,19 @@
       <version>1.0.5</version>
     </dependency>
 
+    <!-- jedis fastjson依赖-->
+
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.38</version>
+    </dependency>
+
   </dependencies>
 
   <build>
